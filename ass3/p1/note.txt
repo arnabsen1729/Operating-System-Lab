@@ -1,0 +1,1 @@
+When we put a text file as a argument it creates an error and says "Persmission Denied". This is because execve expects an executable file but a text file is not executable.

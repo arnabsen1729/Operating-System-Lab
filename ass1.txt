@@ -1,0 +1,4 @@
+1. Already had Ubuntu as native OS.
+2. Installed git.
+3. Installed qemu.
+4. Successfully build xv6 and it showed a command line prompt.

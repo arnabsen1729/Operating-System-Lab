@@ -1,0 +1,16 @@
+1. Can P2 write into the file abc using fp?
+
+Ans. Yes, running part1.c we saw that P2 was able to write into the file abc. We called writeWord(fp, "Child"); in P2 and writeWord(fp, "Parent"); in P1 and in abc we had both the words written. This shows that P2 was able to write into the file abc.
+
+2. If P2 can write into  abc then at which position in the file abc will it write?
+
+Ans. If P1 (Parent) process executed before P2 (Child) process then P2 will write after the word "Parent" written by P1. Basically, once P1 writes, the file pointer is updated and that is reflected in P2.
+
+3. If P1 and P2 both attempt into the file abc then what will be written in the file?
+
+Ans. This was the contents of file abc:
+
+Parent
+Child
+
+P1 first wrote "Parent" and then P2 wrote "Child".

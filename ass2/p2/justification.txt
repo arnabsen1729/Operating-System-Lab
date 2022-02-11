@@ -1,0 +1,32 @@
+1. Can P2 read from the file abc using fp?
+
+Ans: Running part1.c we saw that the parent process was able to read a word and the child process read the next word. Sometimes, the opposite happens. Hence P2 can read from the file abc using fp.
+
+2. If P2 can read from abc then from which position in the file abc will it read?
+
+Ans: Running part1.c the output was like this
+
+P1 reading from fp: Lorem
+P2 reading from fp: ipsum
+
+This clearly shows that P2 started reading from where P1 stopped. Basically, first P1 was executed (in this case, in other cases order might be different) and P1 read the first word "Lorem" and updated fp. P2 started reading from the updated fp and read the second word "ipsum".
+
+3. If P1 and P2 both attempt to read from abc then what will they read?
+
+Ans. The output was:
+
+P1 reading from fp: Lorem
+P2 reading from fp: ipsum
+
+or it might be the opposite. In this case P1 read the first word and P2 read the second word. In some other scenario P2 might read the first word but P1 reads the second word.
+
+4. If P1 closes the file (fclose()) does it get closed for P2 as well?
+
+Ans. Running part2.c the output was:
+
+P1 reading from fp: Lorem
+P2 reading from fp: �W� �
+
+This suggests that once we close the file in P1 and if P2 is reading after P1, then P2 can't read anymore.
+
+Conclusion: Fork makes a copy of the address-space. So any change in one of the process will be reflected in the other process.
