@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "*.erb": "erb",
+        "stdbool.h": "c"
+    }
+}

@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "*.erb": "erb",
-        "filesystem": "c"
+        "filesystem": "c",
+        "functional": "c",
+        "__locale": "c"
     }
 }

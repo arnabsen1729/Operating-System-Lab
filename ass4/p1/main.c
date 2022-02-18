@@ -108,9 +108,8 @@ void getSHM(int *shmid) {
 /**
  * @brief Handler for the signal SIGINT
  *
- * @param signum
  */
-void releaseSHM(int signum) {
+void releaseSHM() {
   destroySHM(shmid_c);
   destroySHM(shmid_n);
 }
