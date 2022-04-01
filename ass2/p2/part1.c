@@ -5,6 +5,7 @@
  * @date 2022-01-21
  */
 #include <stdio.h>
+#include <stdlib.h>
 #include <sys/types.h>
 #include <unistd.h>
 
@@ -30,18 +31,23 @@ int main() {
     return 1;
   }
 
+  printf("%x %ld\n", fp, ftell(fp));
   pid_t pid = fork();  // create a child process P2
-
   if (pid == 0) {
     // child process P2
-    printf("%x %d", &abc, abc);
+    // printf("%x %d\n", &abc, abc);
+    printf("%x %ld\n", fp, ftell(fp));
     printf("P2 reading from fp: ");
+    fflush(stdout);
     readWordAndPrint(fp);
-  } else {
-    // parent process P1
-
-    printf("P1 reading from fp: ");
-    readWordAndPrint(fp);
+    exit(0);
   }
+  // parent process P1
+
+  printf("%x %ld\n", fp, ftell(fp));
+  printf("P1 reading from fp: ");
+  fflush(stdout);
+  readWordAndPrint(fp);
+
   return 0;
 }
