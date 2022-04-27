@@ -1,3 +1,11 @@
+/**
+ * @file p1.c
+ * @author Arnab Sen (arnabsen1729@gmail.com)
+ * @brief
+ * @date 2022-04-01
+ *
+ */
+
 #include <stdio.h>
 #include <stdlib.h> /* exit functions */
 #include <string.h>
